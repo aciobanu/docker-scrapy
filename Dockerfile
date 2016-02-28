@@ -13,3 +13,8 @@ RUN apk -U add \
 
 RUN pip install Scrapy
 
+WORKDIR /runtime/app
+
+COPY entrypoint.sh /runtime/entrypoint.sh
+ENTRYPOINT ["/runtime/entrypoint.sh"]
+CMD ["scrapy"]
