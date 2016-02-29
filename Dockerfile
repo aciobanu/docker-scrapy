@@ -9,9 +9,8 @@ RUN apk -U add \
         openssl-dev \
         python-dev \
         py-pip \
-    && rm -rf /var/cache/apk/*
-
-RUN pip install Scrapy
+    && rm -rf /var/cache/apk/* \
+    && pip install Scrapy
 
 WORKDIR /runtime/app
 
