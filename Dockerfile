@@ -8,6 +8,7 @@ RUN apk -U add \
         musl-dev \
         openssl-dev \
         python-dev \
+        py-imaging \
         py-pip \
     && rm -rf /var/cache/apk/* \
     && pip install Scrapy
