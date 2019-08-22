@@ -1,12 +1,13 @@
 FROM alpine:latest
 
 RUN apk -U add \
+        python3 \
         gcc \
         libffi-dev \
         libxml2-dev \
         libxslt-dev \
         musl-dev \
-        openssl-dev \
+        libressl-dev \
         python-dev \
         py-imaging \
         py-pip \
