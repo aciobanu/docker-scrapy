@@ -1,15 +1,14 @@
 FROM alpine:latest
 
 RUN apk -U add \
-        python3 \
         gcc \
         libffi-dev \
         libxml2-dev \
         libxslt-dev \
         musl-dev \
         libressl-dev \
-        python-dev \
-        py-imaging \
+        python3-dev \
+        py-pillow \
         py-pip \
         curl ca-certificates \
     && update-ca-certificates \
