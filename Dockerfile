@@ -1,20 +1,25 @@
 FROM alpine:latest
 
+ENV BUILD_DEPS gcc \
+    cargo \
+    musl-dev
+
 RUN apk -U add \
-        gcc \
+        ${BUILD_DEPS} \
         libffi-dev \
         libxml2-dev \
         libxslt-dev \
-        musl-dev \
+        openssl-dev \
         libressl-dev \
         python3-dev \
-        py-pillow \
         py-pip \
-        curl ca-certificates \
+        curl \
+        ca-certificates \
     && update-ca-certificates \
-    && rm -rf /var/cache/apk/* \
     && pip install --upgrade pip \
-    && pip install Scrapy
+    && pip install Scrapy \
+    && apk -U del ${BUILD_DEPS} \
+    && rm -rf /var/cache/apk/*
 
 WORKDIR /runtime/app
 
