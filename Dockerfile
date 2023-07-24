@@ -10,7 +10,6 @@ RUN apk -U add \
         libxml2-dev \
         libxslt-dev \
         openssl-dev \
-        libressl-dev \
         python3-dev \
         py-pip \
         curl \
